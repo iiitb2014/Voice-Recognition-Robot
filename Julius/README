@@ -1,0 +1,14 @@
+This folder contains everything you need to get Julius working:
+ * Julius Run-time engine executable;
+ * VoxForge Acoustic Model files;
+ * VoxForge sample Grammar files.
+
+Simply execute the following command to take input from mic: 
+ $./julian -input mic -C julian.jconf
+
+Simply execute the following command to take convert speech to text:
+ $./julian -input mic -C julian.jconf >> input.dat (file name where you want the text)
+
+For information on the Julian grammar syntax, see the enclosed GRAMMAR_NOTES.
+
+

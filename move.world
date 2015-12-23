@@ -1,0 +1,53 @@
+# simple.world - basic world file example
+# Authors: Richard Vaughan
+# $Id$
+
+include "pioneer.inc"     # defines Pioneer-like robots
+include "map.inc"         # defines 'floorplan' object used for obstacle maps
+#include "sick.inc"        # defines sick laser
+
+interval_sim 100  # simulation timestep in milliseconds
+interval_real 100  # real-time interval between simulation updates in milliseconds 
+
+paused 0
+
+# configure the GUI window
+window
+(
+  size [ 700.000 700.000 ] # in pixels
+  scale 37                 # pixels per meter
+  show_data 1              # 1=on 0=off
+)
+
+# load an environment bitmap
+floorplan
+( 
+  name "cave"
+  size [16 16 0.6]
+  bitmap "table.png"
+)
+
+pioneer2dx
+(		  
+  # can refer to the robot by this name
+  name "r0"
+
+  pose [ 0 0 0 0 ] 
+  #pose [ -2.0 1.0 0 45 ] 
+  #sicklaser()
+  #fiducial ( range_max 3 range_max_id 3 )
+)
+
+#define puck model (
+#   size [ 0.1 0.1 1.1 ]
+#   gripper_return 1
+#   gui_movemask 3
+#   gui_nose 0
+#   range_return 1
+#   laser_return 1
+
+#)
+
+
+#puck ( pose [-2.0 5.0 0.0 0.0 ] color "red" fiducial_return 1)
+#puck ( pose [ 6.0 -3.0 0.0 0.0 ] color "orange" fiducial_return 2)
